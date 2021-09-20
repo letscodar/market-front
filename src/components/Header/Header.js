@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function Header() {
+export function Header() {
   return (
     <nav>
       <ul>
@@ -8,11 +9,9 @@ function Header() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/users">Login</Link>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>
   );
 }
-
-export default Header;
