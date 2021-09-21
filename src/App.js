@@ -13,11 +13,13 @@ export const data = {
       id: "001",
       name: "TV",
       slug: "tv-samsung",
+      description: "TV Samsung de várias polegadas",
     },
     {
       id: "002",
       name: "Som",
       slug: "som-philips",
+      description: "Som Philips bem legal",
     },
   ],
 };
