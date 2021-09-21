@@ -1,17 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 export function Header() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-      </ul>
+    <nav id="header">
+      <Link to="/" className="logo">
+        Let's Market
+      </Link>
+      <Link to="/login">
+        <button>Login</button>
+      </Link>
     </nav>
   );
 }

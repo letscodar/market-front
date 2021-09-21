@@ -1,5 +1,10 @@
 import React from "react";
+import "./Footer.css";
 
 export function Footer() {
-  return <small>Copyright 2021</small>;
+  return (
+    <div id="footer">
+      <small>Copyright 2021</small>
+    </div>
+  );
 }
