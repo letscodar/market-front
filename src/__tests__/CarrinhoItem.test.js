@@ -1,33 +1,35 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import CarrinhoItem from "../pages/CarrinhoItem";
-import { removeFromCarrinho } from "react-redux";
+import CarrinhoItem from "../components/CarrinhoItem";
+import { useDispatch } from "react-redux";
 
-describe.skip("funcionalidades dos itens do carrinho", () => {
+jest.mock("react-redux", () => ({ useDispatch: jest.fn() }));
+
+describe("funcionalidades dos itens do carrinho", () => {
   //
   let container;
-  const mockProduct = { name: "tv", amount: 1 };
+  const mockProduct = { id: "001", amount: 1 };
 
   beforeEach(() => {
-    container = render(<CarrinhoItem product={mockProduct} />);
+    // useDispatch.mockImplementation(() => {});
+    container = render(<CarrinhoItem carrinhoItemInfo={mockProduct} />);
   });
 
   it("produto tem o nome correto", () => {
-    expect(container.getByRole("link")).toHaveTextContent("tv");
+    expect(container.getByText(/TV/)).toBeInTheDocument();
   });
 
-  it("produto exibe a quantidade", () => {
-    expect(container.getByRole("input")).toHaveValue(1);
+  it.skip("produto exibe a quantidade", () => {
+    expect(container.querySelector("span")).toHaveTextContent("1");
   });
 
-  it("produto tem botão de remover do carrinho", () => {
-    expect(container.getByRole("button")).toHaveTextContent("Remover");
-  });
+  // it("produto tem botão de remover do carrinho", () => {
+  //   expect(container.getByRole("button")).toHaveTextContent("Remover");
+  // });
 
-  it("botão de remover chamar função de remoção do redux", () => {
-    const removeFromCarrinho = jest.fn();
-    fireEvent.click(container.getByRole("button"));
-    expect(removeFromCarrinho).toHaveBeenCalledTimes(1);
-  });
+  // it.skip("botão de remover chamar função de remoção do redux", () => {
+  //   fireEvent.click(container.getByRole("button"));
+  //   expect(removeFromCarrinho).toHaveBeenCalledTimes(1);
+  // });
 });

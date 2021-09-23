@@ -1,15 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../features/carrinho/carrinhoSlice";
+import { addToCarrinho } from "../features/carrinho/carrinhoSlice";
 
 function Product({ productData }) {
   //
   const dispatch = useDispatch();
 
-  const handleAddToCart = () => {
+  const handleAddToCarrinho = () => {
     dispatch(
-      addToCart({
-        name: productData.name,
+      addToCarrinho({
+        id: productData.id,
+        amount: 1,
       })
     );
   };
@@ -18,7 +19,7 @@ function Product({ productData }) {
     <div data-testid="product-page">
       <h1 data-testid="product-name">{productData.name}</h1>
       <p data-testid="product-description">{productData.description}</p>
-      <button data-testid="add-to-cart-button" onClick={handleAddToCart}>
+      <button data-testid="add-to-cart-button" onClick={handleAddToCarrinho}>
         Adicionar ao carrinho
       </button>
     </div>

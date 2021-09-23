@@ -31,3 +31,14 @@ a:hover {
   margin: 0 auto;
   padding: 1.5rem;
 }
+
+#carrinho .lista-produtos {
+  padding: 0;
+  border-top: 1px solid #ddd;
+}
+
+#carrinho .lista-produtos .carrinho-item {
+  list-style: none;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}

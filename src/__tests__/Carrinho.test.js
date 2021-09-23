@@ -4,12 +4,22 @@ import "@testing-library/jest-dom";
 import Carrinho from "../pages/Carrinho";
 import { useSelector } from "react-redux";
 
+jest.mock("../components/CarrinhoItem", () => {
+  return {
+    __esModule: true,
+    default: () => <li></li>,
+  };
+});
+
 jest.mock("react-redux", () => ({ useSelector: jest.fn() }));
 
 describe("funcionalidades com carrinho cheio", () => {
   //
   let container;
-  const mockProducts = [{ name: "tv" }, { name: "som" }];
+  const mockProducts = [
+    { id: "001", name: "tv" },
+    { id: "002", name: "som" },
+  ];
 
   beforeEach(() => {
     useSelector.mockImplementation(() => mockProducts);
