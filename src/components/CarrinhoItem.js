@@ -20,7 +20,7 @@ function CarrinhoItem({ carrinhoItemInfo }) {
       <strong>{itemInfoFromData.name}</strong>
       {/* <input type="number" value={carrinhoItemInfo.amount} /> */}
       {" | "}
-      {carrinhoItemInfo.amount}
+      <span aria-label="quantidade de itens">{carrinhoItemInfo.amount}</span>
       {" | "}
       <button onClick={handleRemoveFromCarrinho}>Remover</button>
     </li>

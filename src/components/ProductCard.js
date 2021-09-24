@@ -9,9 +9,10 @@ function ProductCard({ product }) {
       data-testid="product-link"
       className="product-card"
     >
-      <div>
-        {product.name} | R$ {product.price}
+      <div aria-label={"nome do produto"}>
+        <strong>{product.name}</strong>
       </div>
+      <div aria-label={"valor do produto"}>R$ {product.price}</div>
     </NavLink>
   );
 }
