@@ -18,6 +18,7 @@ function Product({ productData }) {
   return (
     <div data-testid="product-page">
       <h1 data-testid="product-name">{productData.name}</h1>
+      <img src={productData.img} alt={productData.description} width={240} />
       <p data-testid="product-description">{productData.description}</p>
       <button data-testid="add-to-cart-button" onClick={handleAddToCarrinho}>
         Adicionar ao carrinho

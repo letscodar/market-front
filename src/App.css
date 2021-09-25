@@ -17,12 +17,12 @@ h2 {
 }
 
 a {
-  color: blue;
+  color: steelblue !important;
   text-decoration: none;
 }
 
 a:hover {
-  color: blue;
+  color: steelblue;
   text-decoration: underline;
 }
 
