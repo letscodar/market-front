@@ -41,7 +41,7 @@ describe("funcionalidades do card de produto", () => {
 
   it("mostra a imagem do produto", () => {
     const { getByRole } = container;
-    expect(getByRole("img")).toHaveAccessibleDescription(
+    expect(getByRole("img")).toHaveAccessibleName(
       "TV Samsung de várias polegadas"
     );
   });

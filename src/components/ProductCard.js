@@ -9,6 +9,7 @@ function ProductCard({ product }) {
       data-testid="product-link"
       className="product-card"
     >
+      <img src={product.img} alt={product.description} width={100} />
       <div aria-label={"nome do produto"}>
         <strong>{product.name}</strong>
       </div>

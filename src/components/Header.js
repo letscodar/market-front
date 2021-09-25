@@ -19,6 +19,7 @@ export function Header() {
           <Link to="/cadastro">Cadastre-se</Link>
         </li>
       </ul>
+      <hr />
       <Link to="/carrinho">Carrinho: {carrinho.length}</Link>
     </nav>
   );
